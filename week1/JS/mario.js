@@ -1,4 +1,9 @@
+//to read the input from user
 const prompt = require("prompt-sync")();
+//string builder
+const StringBuilder = require("string-builder");
+//chalk to color the hashes
+const chalk = require('chalk');
 //task: build:
 //        #
 //       ##
@@ -9,32 +14,46 @@ const prompt = require("prompt-sync")();
 //  #######
 // ########
 
+//task2: build:
+//        # #
+//       ## ##
+//      ### ###
+//     #### ####
+//    ##### #####
+//   ###### ######
+//  ####### #######
+// ######## ########
+
 
 function mario() {
-    //start a forever loop to read the entry of the user
-    for (let g = 0; g >= 0; g++) {
-        var input = prompt("Enter a number between 1 and 8:");
-        //check if entry is between 1 and 8
-        if (input >= 1 && input <= 8) {
-            var line = 1;
-            //builder
-            if (line <= input) {
-                var space = input - line;
-                //print empty spaces
-                for (let sp = space; sp >0; sp--) {
-                    console.log(" ");
-                    };   
-                //print #
-                for (let i = input; i > space; i--){
-                    console.log("#");
-                    };
-                console.log("\n");
-            //go to next line
-            line++;
-            }
+    //declare a string builder
+    const sb = new StringBuilder();
+    //read the entry of the user
+    var input = prompt("Enter a number between 1 and 8:");
+    //Check if the input is between 1 and 8 
+    if (input >= 1 && input <= 8) {
+        //for loop starting to build from line 1
+        for (let line = 1; line <= input; line++) {
+        //counters for empty space and hashes
+        var space = input - line;
+        var hash = input - space;
+        //builder
+            for (var s = 1; s <= space; s++) {
+                sb.append(" "); 
+            };
+            for (var i = 1; i <= hash; i++) {
+                sb.append("#");
+            }; 
+            sb.append(" "); 
+            for (var i = 1; i <= hash; i++) {
+                sb.append("#");
+            }; 
+            //Print line 
+            console.log(chalk.redBright(sb.toString()));
+            //clear the builder
+            sb.clear();
         }
     }
 }
-
-let x = mario();
-console.log(x);
+//required to run the function in terminal
+console.log(mario());
