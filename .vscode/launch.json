@@ -1,7 +1,6 @@
 {
   "version": "0.2.0",
   "configurations": [
-  
     {
       "name": "Python: Current File",
       "type": "python",
@@ -31,8 +30,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "c:/Users/alina/Desktop/cs50/week1/Rust",
-      "program": "c:/Users/alina/Desktop/cs50/week1/Rust/build/Debug/outDebug",
+      "cwd": "c:/Users/alina/Desktop/cs50/week4/C",
+      "program": "c:/Users/alina/Desktop/cs50/week4/C/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
