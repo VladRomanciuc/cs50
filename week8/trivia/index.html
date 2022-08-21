@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            //Listen on events on the page
+            document.addEventListener('DOMContentLoaded', function listen(){
+                //Make the buttons work. 
+                //Select elements with the class multi
+                let btnElements = document.querySelectorAll('.multi');
+                //Select the element with id send-yn
+                let sendBtnElement = document.querySelector('#send-yn');
+                //Boolean variable to control the state of question (Answered or Not)
+                let btnAnswered = false;
+                let sendAnswered = false;
+
+                //For loop that makes an event listener for each button and trigger the multi function
+                for (let btnElement of btnElements){
+                    btnElement.addEventListener('click', event => multiChoice(event));
+                }
+                //Listener for Second question that trigger a yn function
+                sendBtnElement.addEventListener('click', ynResponse);
+
+                //Function to change the background of button for Question1
+                function multiChoice(event){
+                    //State checker. If true stop.
+                    if (btnAnswered == true){
+                        return;
+                    }
+                    //If false continue to execute the code above
+                    //Constant to store the return from listener
+                    const btnClass = event.target;
+                    //New element to display good and bad
+                    let gbElement = document.createElement('h4');
+                    //Condition checker
+                    if (btnClass.classList.contains('good')){
+                        //Change the color to green
+                        btnClass.style.background = 'green';
+                        //text to display in the new element
+                        gbElement.textContent = 'Good!';
+                    } else {
+                        //Change color red
+                        btnClass.style.background = 'red';
+                        //Display bad boy
+                        gbElement.textContent = 'Bad boy!';
+                    }
+                    //Add a new div h4 to disply the text
+                    let gbDiv = btnClass.parentElement;
+                    gbDiv.appendChild(gbElement);
+                    //Change state to true
+                    btnAnswered = true;
+                }
+
+                function ynResponse(){
+                    //State checker. If true stop.
+                    if (sendAnswered == true){
+                        return;
+                    }
+                    //If false continue to execute the code above
+                    //Variable to store the return from input element
+                    let ynSendElement = document.querySelector('#yn');
+                    //Variable to store the value
+                    let send = ynSendElement.value;
+                    //New element to display good and bad
+                    let ynElement = document.createElement('h4');
+                    //Condition checker
+                    if (send == 'yes' || send == 'Yes'){
+                         //Change the color to green
+                        ynSendElement.style.background = 'green';
+                         //text to display in the new element
+                        ynElement.textContent = 'Good!';
+                    } else {
+                        //Change color red
+                        ynSendElement.style.background = 'red';
+                        //Display bad boy
+                        ynElement.textContent = 'Bad boy!';
+                    }
+                    //Add a new div h4 to disply the text
+                    let ynDiv = ynSendElement.parentElement;
+                    ynDiv.appendChild(ynElement);
+                    //Change state to true
+                    sendAnswered = true;
+                }
+            })
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!--Question 1-->
+                <h3>When launching containers in Amazon ECS, where may PortMapping be defined?</h3>
+                <button class="multi bad">A. Security groups</button>
+                <button class="multi bad">B. Amazon Elastic Container Registry (Amazon ECR)</button>
+                <button class="multi bad">C. Container agent</button>
+                <button class="multi good">D. Task definition</button>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- Question 11 -->
+                <h3>Transform section of the document root must be included in an AWS CloudFormation template to include objects specified by the AWS Serverless Application Model (SAM) in addition to Resources?</h3>
+                <input id="yn" type="text" placeholder="Yes or No">
+                <button id="send-yn">Send</button>
+            </div>
+        </div>
+    </body>
+</html>
