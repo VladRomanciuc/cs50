@@ -11,9 +11,9 @@ async function performPostHttpRequest(fetchLink, headers, body) {
       method: 'POST',
       headers: headers,
       body: JSON.stringify(body),
-    }).then((response) => response.json()).then((json) => console.log(json));
-
+    });
     const content = await rawResponse.json();
+    console.log(content);
     return content;
   } catch (err) {
     console.error(`Error at fetch POST: ${err}`);
@@ -25,23 +25,28 @@ async function submitForm(e, form) {
   e.preventDefault();
   const btnSubmit = document.getElementById('btnSubmit');
   setTimeout(() => btnSubmit.disabled = false, 2000);
-  const jsonFormData = buildJsonFormData(form);
-  console.log(jsonFormData);
-  const headers = buildHeaders();
-  console.log(headers);
-  const response = await performPostHttpRequest(`https://jsonplaceholder.typicode.com/posts`, headers, jsonFormData);
-  console.log(response);
-  if (response) {
-    alert('Job done');
+  if (isValid) {
+    const jsonFormData = buildJsonFormData(form);
+    console.log(jsonFormData);
+    const headers = buildHeaders();
+    console.log(headers);
+    const response = await performPostHttpRequest(`https://jsonplaceholder.typicode.com/posts`, headers, jsonFormData);
+    console.log(response);
+    if (response) {
+      alert('Job done');
+      form.reset();
+    } else {
+      alert('Error');
+    };
   } else {
-    alert('Error');
+    return;
   };
 }
 
 function buildHeaders(authorization=null) {
   const headers = {
     'Content-Type': 'application/json, charset=UTF-8',
-    'Authorization/': (authorization) ? authorization : 'Bearer TOKEN_MISSING',
+    'Authorization': (authorization) ? authorization : 'Bearer TOKEN_MISSING',
   };
   return headers;
 }
@@ -54,24 +59,25 @@ function buildJsonFormData(form) {
   return jsonFormData;
 }
 
-const contactForm = document.querySelector('#contactForm');
-if (contactForm) {
-  contactForm.addEventListener('submit', function(e) {
-    submitForm(e, this);
-  });
+
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    const forms = document.getElementsByClassName('needs-validation');
+    const a=[];
+    a.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+        submitForm(event, form);
+      }, false);
+    });
+  }, false);
+})();
+
+function isValid() {
+
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.querySelector('needs-validation');
-  if (form) {
-    form.addEventListener('submit', function(event) {
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-      form.classList.add('was-validated');
-    }, false);
-  };
-});
-
-
