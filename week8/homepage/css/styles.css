@@ -1,0 +1,33 @@
+.nav-bg-color{
+  background-color: #007cc7;
+}
+
+.formClass{
+  padding: 2%;
+  margin-top: 15px;
+  bottom: 0;
+}
+.form-group{
+  padding: 0.5%;
+}
+
+#footer {
+    padding: 10px;
+    color: #ffffff;
+    font-size: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #007cc7;
+  }
+  
+  #footer .copyright {
+    text-align: center;
+  }
+  
+  #footer .credits {
+    padding-top: 4px;
+    text-align: center;
+    font-size: 16px;
+  }
