@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="../js/index.js" crossorigin="anonymous"></script>
+        <script src="../js/contact.js" crossorigin="anonymous"></script>
         <link href="../css/styles.css" rel="stylesheet">
         <title>My Webpage</title>
     </head>
@@ -39,11 +39,16 @@
             </div>
           </nav>
           <main>
+            
             <!--Contact form -->
           <div class="container formClass">
 
             <form class="needs-validation"   novalidate id="contactForm">
-
+              <div class="form-row offset-md-0 offset-md-1 col-lg-6 offset-lg-2 offset-xl-3">
+                <!--Alerts-->
+                <div id="alertInfo" class="alert fade" role="alert"></div>
+              </div>
+              <!--The email field-->
               <div class="form-row offset-md-0 offset-md-1 col-lg-6 offset-lg-2 offset-xl-3">
                 <div class="form-group">
                   <label for="email">Email:</label>
@@ -52,7 +57,7 @@
                     <div class="invalid-feedback">Please enter a valid email.</div>
                   </div>
               </div>
-
+              <!--The address field-->
               <div class="form-row offset-md-0 offset-md-1 col-lg-6 offset-lg-2 offset-xl-3">
                 <div class="form-group">
                   <label for="address">Address:</label>
@@ -61,7 +66,7 @@
                   <div class="invalid-feedback">Please enter an address.</div>
                 </div>
               </div>
-
+              <!--The flat field-->
               <div class="form-row offset-md-0 offset-md-1 col-lg-6 offset-lg-2 offset-xl-3">
                 <div class="form-group">
                   <label for="flat">Flat/Floor:</label>
@@ -70,7 +75,7 @@
                   <div class="invalid-feedback">Please enter a flat or floor number.</div>
                 </div>
               </div>
-
+              <!--The city field-->
               <div class="form-row offset-md-0 offset-md-1 col-lg-6 offset-lg-2 offset-xl-3">
                 <div class="form-group">
                   <label for="city">City</label>
@@ -79,7 +84,7 @@
                   <div class="invalid-feedback">Please enter your city.</div>
                 </div>
               </div>
-
+              <!--The text input area-->
               <div class="form-row offset-md-0 offset-md-1 col-lg-6 offset-lg-2 offset-xl-3">
                 <div class="form-group">
                   <label for="message">Message:</label>
@@ -88,7 +93,7 @@
                     <div class="invalid-feedback">Please enter a message.</div>
                   </div>
               </div>
-
+              <!--Submit form button-->
               <div class="form-row offset-md-0 offset-md-1 col-lg-6 offset-lg-2 offset-xl-3">
                 <label for=""></label>
                 <button type="submit" class="btn btn-primary offset-8 col-4" id="btnSubmit">Send></button>

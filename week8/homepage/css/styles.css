@@ -1,7 +1,16 @@
+/*For Projects Gallery*/
+.card-marg {
+  margin: 10px;
+  padding: 5px;
+  max-width: 325px;
+  min-width: 10%;
+  min-height: 10%;
+}
+/*For Navbar*/
 .nav-bg-color{
   background-color: #007cc7;
 }
-
+/*For contacts form*/
 .formClass{
   padding: 2%;
   margin-top: 15px;
@@ -10,7 +19,7 @@
 .form-group{
   padding: 0.5%;
 }
-
+/*For footer*/
 #footer {
     padding: 10px;
     color: #ffffff;
@@ -20,8 +29,7 @@
     bottom: 0;
     width: 100%;
     background: #007cc7;
-  }
-  
+}
   #footer .copyright {
     text-align: center;
   }
