@@ -5,50 +5,95 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-        <script src="../js/index.js" crossorigin="anonymous"></script>
+        <script src="../js/details.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <link href="../css/styles.css" rel="stylesheet">
         <title>My Webpage</title>
     </head>
     <body>
-        <!--Bootstap nav bar for all pages -->
-        <nav class="navbar navbar-expand-lg navbar-light nav-bg-color">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="../index.html">VR223 for CS50</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="details.html">Details</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="projects.html">Projects</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                  </li>
-                </ul>
+      <!--Bootstap nav bar for all pages -->
+      <nav class="navbar navbar-expand-lg navbar-dark nav-bg-color">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">VR223 for CS50</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="details.html">Details</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+          <!--Full cover Intro-->
+          <header class="bg-dark py-6">
+            <div class="container px-5">
+              <div class="row gx-5 align-items-center justify-content-center">
+                <div class="col-md-9 col-lg-8 col-xl-7 col-xxl-6">
+                  <div class="my-5 text-center text-xl-start">
+                    <h1 class="display-5 fw-bolder text-white mb-2">"Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci."</h1>
+                    <p class="lead fw-normal text-white-50 mb-4">Ut nec mauris lectus. Cras ornare luctus mauris quis suscipit. Vivamus sit amet tempor sem. Ut nec tempus diam. Donec vel viverra ipsum, rutrum consequat arcu.</p>
+                  </div>
+                </div>
+                <div class="col-md-3 col-lg-4 col-xl-5 col-xxl-6 d-none d-md-block text-center">
+                  <img class="img-fluid rounded-3 my-5" src="../pics/stars.svg" alt="..."/></div>
               </div>
             </div>
-          </nav>
-        hello from details
+          </header>
+          <!--Main Section-->
+          <section class="py-5" id="features">
+            <div class="container px-5 my-5">
+              <div class="row gx-5 align-items-center">
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                  <h2 class="fw-bolder mb-0">Sed velit arcu, tristique quis libero in, faucibus sagittis risus. </h2>
+                </div>
+                <div class="col-lg-8">
+                  <!--The area to insert with JS-->
+                  <div id="addDetails" class="row gx-5 row-cols-1 row-cols-md-2">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--Comments-->
+          <div class="py-5 bg-light">
+            <div class="container px-5 my-5">
+              <div class="row gx-5 justify-content-center">
+                <div class="col-lg-10 col-xl-7">
+                  <div class="text-center">
+                    <div class="fs-4 mb-4 fst-italic">"Working with Bootstrap and its templates has saved me CSS time when building these pages! It just mirrors that it makes things easier! The reality is that some Javascript code just refused to work as expected which made me rewrite and repeat myself many times..."</div>
+                    <div class="d-flex align-items-center justify-content-center"><img class="rounded-circle profile-i p-2" src="https://www.eu-startups.com/wp-content/uploads/2013/06/Mark-Zuckerberg.png" alt="Johny Tsuckerberg"/>
+                      <div class="fw-bold">Johny Tsuckerberg<span class="fw-bold text-primary mx-1">/</span>CEO, 5pages</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      <!--Footer-->
+      <footer id="footer">
+        <div class="container">
+          <div class="copyright">
+            &copy; CS50 <strong><span> ~ 5pages ~</span></strong>
+          </div>
+          <div class="credits">
+            <code>Made by VR223 in 2 days</code>
+          </div>
+        </div>
+      </footer>
     </body>
-    <!--Footer-->
-    <footer id="footer">
-      <div class="container">
-        <div class="copyright">
-          &copy; CS50 <strong><span> ~ 5pages ~</span></strong>
-        </div>
-        <div class="credits">
-          <code>Made by VR223 in 2 days</code>
-        </div>
-      </div>
-    </footer>
 </html>

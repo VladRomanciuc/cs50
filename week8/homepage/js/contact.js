@@ -2,40 +2,43 @@
 /* eslint-disable require-jsdoc */
 /* --Functions-- */
 
+// Function to perform a post request
 async function performPostHttpRequest(fetchLink, headers, body) {
+  // Error checker
   if (!fetchLink || !headers || !body) {
     throw new Error('One or more POST request parameters was not passed.');
   };
+  // make a Post request
   try {
     const rawResponse = await fetch(fetchLink, {
       method: 'POST',
       headers: headers,
       body: JSON.stringify(body),
     });
+    // save the server answer as json to return it
     const content = await rawResponse.json();
-    // to remove
-    console.log(content);
     return content;
+    // Error catcher
   } catch (err) {
     console.error(`Error at fetch POST: ${err}`);
     throw err;
   }
 }
-
+// Function to submit the form
 async function submitForm(e, form) {
   e.preventDefault();
+  // Listen the submit button
   const btnSubmit = document.getElementById('btnSubmit');
   setTimeout(() => btnSubmit.disabled = false, 2000);
+  // If all check passed
   if (isValid()) {
+    // Build the json from form values
     const jsonFormData = buildJsonFormData(form);
-    //  to remove
-    console.log(jsonFormData);
+    // Build header for the http rewuest
     const headers = buildHeaders();
-    // to remove
-    console.log(headers);
+    // Make the call to the endpoint
     const response = await performPostHttpRequest(`https://jsonplaceholder.typicode.com/posts`, headers, jsonFormData);
-    // to remove
-    console.log(response);
+    // Trigger alerts for the response
     if (response) {
       alertInfo('Job done! Registered as ' + response.id, 'alert-success');
       form.reset();
@@ -46,7 +49,7 @@ async function submitForm(e, form) {
     return alertInfo('The form cannot be empty.', 'alert-danger');
   };
 }
-
+// Function to build http headers
 function buildHeaders(authorization=null) {
   const headers = {
     'Content-Type': 'application/json, charset=UTF-8',
@@ -54,7 +57,7 @@ function buildHeaders(authorization=null) {
   };
   return headers;
 }
-
+// function to build the form json
 function buildJsonFormData(form) {
   const jsonFormData = {};
   for (const keyValue of new FormData(form)) {
@@ -63,7 +66,7 @@ function buildJsonFormData(form) {
   return jsonFormData;
 }
 
-
+// Standart validate function from Bootstrap
 (function() {
   'use strict';
   window.addEventListener('load', function() {
@@ -81,8 +84,9 @@ function buildJsonFormData(form) {
     });
   }, false);
 })();
-
+// const to store the form data
 const fields = {};
+// Listen for the entries in form
 document.addEventListener('DOMContentLoaded', function() {
   fields.email = document.getElementById('email');
   fields.address = document.getElementById('address');
@@ -90,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
   fields.city = document.getElementById('city');
   fields.message = document.getElementById('message');
 });
-
+// Validation function to prevent sending the from empty
 function isValid() {
   let valid = true;
   function isNotEmpty(v) {
@@ -108,11 +112,9 @@ function isValid() {
   valid &= fieldVal(fields.flat, isNotEmpty);
   valid &= fieldVal(fields.city, isNotEmpty);
   valid &= fieldVal(fields.message, isNotEmpty);
-  // to remove
-  console.log(valid);
   return valid;
 }
-
+// Function to display alerts
 function alertInfo(message, param) {
   const alertInfo = document.getElementById('alertInfo');
   if (!alertInfo.classList.contains('show')) {
@@ -130,4 +132,3 @@ function alertInfo(message, param) {
     alertInfo.innerHTML = '';
   }
 }
-

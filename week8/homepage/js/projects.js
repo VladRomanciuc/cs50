@@ -2,33 +2,44 @@
 /* eslint-disable require-jsdoc */
 /* --Functions-- */
 
+// Array to store the data from server
 items = [];
 
+// trigger to get the data on DOM loaded
 document.addEventListener('DOMContentLoaded', () => {
   getData();
 });
 
+// a http get request function
 async function performGetHttpRequest(fetchLink, headers) {
+  // Error checker
   if (!fetchLink || !headers) {
     throw new Error('One or more GET request parameters was not passed.');
   };
+  // Make the api call
   try {
     const rawResponse = await fetch(fetchLink, {
       method: 'GET',
       headers: headers,
     });
+    // Return the response from server
     const content = await rawResponse.json();
     return content;
+    // Error catcher
   } catch (err) {
     console.error(`Error at fetch POST: ${err}`);
     throw err;
   }
 }
-
+// Function to get the data from server endpoint
 async function getData() {
+  // Variable to build the html markup + data from server
   let content = '';
+  // Build headers for http request
   const headers = buildHeaders();
+  // Make the api call
   const response = await performGetHttpRequest(`https://jsonplaceholder.typicode.com/albums/1/photos`, headers);
+  // // if the response is ok build html with the new data
   if (response) {
     response.forEach((v) => {
       content += `
@@ -82,10 +93,11 @@ async function getData() {
 
       `;
     });
+    // Add into div with projects id
     document.querySelector('#projects').innerHTML = content;
   }
 }
-
+// Function to build the http headers
 function buildHeaders(authorization=null) {
   const headers = {
     'Content-Type': 'application/json, charset=UTF-8',
@@ -93,4 +105,3 @@ function buildHeaders(authorization=null) {
   };
   return headers;
 }
-

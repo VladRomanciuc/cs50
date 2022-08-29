@@ -1,3 +1,41 @@
+/*For details*/
+.feature-details {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 75px;
+  font-size: 16px;
+}
+.profile-i {
+  max-height: 80px;
+}
+/*For home page*/
+.bg-image-full {
+  background-image: url(../pics/yellow.jpg);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
+  max-height: 300px;
+}
+.jgenie {
+  max-height: 200px;
+  margin-top: -50px;
+}
+.home {
+  margin-top: -20px;
+}
+/*For services*/
+.feature {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  max-width: 550px;
+  min-width: 350px;
+  font-size: 2rem;
+}
 /*For Projects Gallery*/
 .card-marg {
   margin: 10px;
@@ -33,7 +71,6 @@
   #footer .copyright {
     text-align: center;
   }
-  
   #footer .credits {
     padding-top: 4px;
     text-align: center;

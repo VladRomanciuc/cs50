@@ -11,7 +11,7 @@
     </head>
     <body>
         <!--Bootstap nav bar for all pages -->
-        <nav class="navbar navbar-expand-lg navbar-light nav-bg-color">
+        <nav class="navbar navbar-expand-lg navbar-dark nav-bg-color">
             <div class="container-fluid">
               <a class="navbar-brand" href="./index.html">VR223 for CS50</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,18 +38,37 @@
               </div>
             </div>
           </nav>
-        Hello from home page
+
+          <!--Full cover img-->
+          <header class="py-5 bg-image-full">
+            <div class="text-center my-5"><img class="img-fluid rounded-circle mb-4 jgenie" src="./pics/Wishes.svg" alt="..."/>
+              <h1 class="text-white fs-3 fw-bolder home">Home</h1>
+            </div>
+          </header>
+          <!--Main section-->
+          <section>
+            <!--my top and bottom padding set to 5-->
+            <div class="container my-5">
+              <div class="row justify-content-center">
+                <div class="text-center">
+                  <h2>Project Homepage</h2>
+                  <p class="lead">Using HTML, JavaScript, some CSS, Bootstrap and <a href="https://jsonplaceholder.typicode.com/">JsonPlaceholder</a> as a mock API.</p>
+                  <!--margin bottom set to 0-->
+                  <p class="mb-0 text-info">Everything can be learned if you want of course.<br/> No one is born with skills...</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!--Footer-->
+          <footer id="footer">
+            <div class="container">
+              <div class="copyright">
+                &copy; CS50 <strong><span> ~ 5pages ~</span></strong>
+              </div>
+              <div class="credits">
+                <code>Made by VR223 in 2 days</code>
+              </div>
+            </div>
+        </footer>   
     </body>
-    
-    <!--Footer-->
-    <footer id="footer">
-      <div class="container">
-        <div class="copyright">
-          &copy; CS50 <strong><span> ~ 5pages ~</span></strong>
-        </div>
-        <div class="credits">
-          <code>Made by VR223 in 2 days</code>
-        </div>
-      </div>
-    </footer>
 </html>

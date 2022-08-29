@@ -11,39 +11,38 @@
     </head>
     <body>
         <!--Bootstap nav bar for all pages -->
-        <nav class="navbar navbar-expand-lg navbar-light nav-bg-color">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="../index.html">VR223 for CS50</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarToggler">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="details.html">Details</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="services.html">Services</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="projects.html">Projects</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
-                  </li>
-                </ul>
-              </div>
+      <nav class="navbar navbar-expand-lg navbar-dark nav-bg-color">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="../index.html">VR223 for CS50</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggler">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="details.html">Details</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+                </li>
+              </ul>
             </div>
-          </nav>
-          <main>
-            
+        </div>
+      </nav>
+        <main>
             <!--Contact form -->
           <div class="container formClass">
-
             <form class="needs-validation"   novalidate id="contactForm">
+              <!--Using bootstrap grid for different screen sizes-->
               <div class="form-row offset-md-0 offset-md-1 col-lg-6 offset-lg-2 offset-xl-3">
                 <!--Alerts-->
                 <div id="alertInfo" class="alert fade" role="alert"></div>
@@ -95,14 +94,11 @@
               </div>
               <!--Submit form button-->
               <div class="form-row offset-md-0 offset-md-1 col-lg-6 offset-lg-2 offset-xl-3">
-                <label for=""></label>
                 <button type="submit" class="btn btn-primary offset-8 col-4" id="btnSubmit">Send></button>
               </div>
-
             </form>
           </div>
-          </main>
-    </body>
+        </main>
     <!--Footer-->
     <footer id="footer">
       <div class="container">
@@ -113,5 +109,6 @@
           <code>Made by VR223 in 2 days</code>
         </div>
       </div>
-    </footer>
+    </footer> 
+  </body>   
 </html>
