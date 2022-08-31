@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction history
+{% endblock %}
+
+{% block main %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+              <th scope="col">Stock symbol</th>
+              <th scope="col">Stock name</th>
+              <th scope="col">Shares</th>
+              <th scope="col">Share price</th>
+              <th scope="col">Transaction</th>
+              <th scope="col">Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for h in history %}
+            <tr>
+              <td>
+                <div class="mx-auto w-auto">
+                    {{h["symbol"]}}
+                </div>
+              </td>
+              <td>
+                <div class="mx-auto w-auto">
+                    {{h["share_name"]}}
+                </div>
+              </td>
+              <td>
+                <div class="mx-auto w-auto">
+                    {{h["share_amnt"]}}
+                </div>
+              </td>
+              <td>
+                <div class="mx-auto w-auto">
+                    {{usd(h["share_price"])}}
+                </div>
+              </td>
+              <td>
+                <div class="mx-auto w-auto">
+                    {{h["trans_type"]}}
+                </div>
+              </td>
+              <td>
+                <div class="mx-auto w-auto">
+                    {{h["trans_time"]}}
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

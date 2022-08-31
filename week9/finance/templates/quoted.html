@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Stock symbol</th>
+          <th scope="col">Action</th>
+          <th scope="col">Share price</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <th scope="row"></th>
+          <td>
+            <div class="mx-auto w-auto">
+                {{entry.name}}
+            </div>
+          </td>
+          <td>
+              <a class="btn-sm btn-primary" role="button" href="/buy">Buy</a>
+              <a class="btn-sm btn-danger" role="button" href="/sell">Sell</a>
+          </td>
+          <td>
+            <div class="mx-auto w-auto">{{usd(entry.price)}}</div></td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

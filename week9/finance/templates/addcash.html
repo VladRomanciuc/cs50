@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add cash
+{% endblock %}
+
+{% block main %}
+    <form action="/addcash" method="post">
+        <div class="form-group row mb-3">
+            <label for="cash" class="offset-sm-3 col-sm-2 col-form-label">Current cash:</label>
+            <div class="col-sm-3">
+                <input class="form-control mx-auto text-center " id="cash" name="cash" type="text" value="{{usd(cash)}}">
+            </div>
+        </div>
+        <div class="form-group row mb-3">
+            <label for="newcash" class="offset-sm-3 col-sm-2 col-form-label">Amount to add:</label>
+            <div class="col-sm-3">
+                <input autocomplete="off" class="form-control autofocus mx-auto" id="newcash" name="newcash" placeholder="Amount to add" type="number" min="0">
+            </div>
+         </div>
+        <button class="btn btn-primary offset-sm-2 col-sm-2 ml-4" type="submit">Add</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+              <th scope="col">Stock symbol</th>
+              <th scope="col">Stock name</th>
+              <th scope="col">Shares</th>
+              <th scope="col">Share price</th>
+              <th scope="col">TOTAL</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in stocks %}
+            <tr>
+              <td>
+                <div class="mx-auto w-auto">
+                    {{i["symbol"]}}
+                </div>
+              </td>
+              <td>
+                <div class="mx-auto w-auto">
+                    {{i["share_name"]}}
+                </div>
+              </td>
+              <td>
+                <div class="mx-auto w-auto">
+                    {{i["total_amnt"]}}
+                </div>
+              </td>
+              <td>
+                <div class="mx-auto w-auto">
+                    {{i["share_price"]}}
+                </div>
+              </td>
+              <td>
+                <div class="mx-auto w-auto">
+                    {{usd(i["share_price"] * i["total_amnt"])}}
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td>CASH</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="mx-auto w-auto">
+                        {{usd(current_cash)}}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th scope="row"></th>
+                <td colspan="3"></td>
+                <td>
+                    <div class="mx-auto w-auto">
+                        {{usd(total_cash)}}
+                    </div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+{% endblock %}

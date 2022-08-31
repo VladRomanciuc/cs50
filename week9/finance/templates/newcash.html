@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add cash
+{% endblock %}
+
+{% block main %}
+    <form action="/newcash" method="post">
+        <div class="form-group row mb-3">
+            <label for="cash" class="offset-sm-3 col-sm-2 col-form-label">Current cash:</label>
+            <div class="col-sm-3">
+                <input class="form-control mx-auto text-center " id="cash" name="cash" type="text" value="{{usd(cash)}}">
+            </div>
+        </div>
+    </form>
+{% endblock %}
